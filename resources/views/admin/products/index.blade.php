@@ -1,35 +1,19 @@
 @extends('admin.layouts.app')
-
 @section('title', 'Quản lý Sản phẩm')
-
 @section('content')
     <div class="page-header">
         <h2 class="page-title">Quản lý Sản phẩm</h2>
         <div class="page-actions">
-            <a href="{{ route('admin.products.create') }}" class="btn btn-primary">
-                <i class="fas fa-plus"></i>
-                Thêm Sản phẩm
-            </a>
+            <a href="{{ route('admin.products.create') }}" class="btn btn-primary"><i class="fas fa-plus"></i> Thêm Sản
+                phẩm</a>
         </div>
     </div>
-
     @if (session('success'))
-        <div class="p-4 mb-4 text-sm text-green-700 bg-green-100 rounded-lg" role="alert">
-            {{ session('success') }}
-        </div>
+        <div class="p-4 mb-4 text-sm text-green-700 bg-green-100 rounded-lg" role="alert">{{ session('success') }}</div>
     @endif
-
     <div class="content-card">
         <table class="w-full text-left">
-            <thead>
-                <tr class="border-b">
-                    <th class="p-3">Ảnh</th>
-                    <th class="p-3">Tên sản phẩm</th>
-                    <th class="p-3">Giá</th>
-                    <th class="p-3">Số lượng</th>
-                    <th class="p-3">Hành động</th>
-                </tr>
-            </thead>
+            {{-- ... Tiêu đề bảng ... --}}
             <tbody>
                 @forelse ($products as $product)
                     <tr class="border-b hover:bg-gray-50">
@@ -58,8 +42,6 @@
                 @endforelse
             </tbody>
         </table>
-        <div class="mt-4">
-            {{ $products->links() }}
-        </div>
+        <div class="mt-4">{{ $products->links() }}</div>
     </div>
 @endsection
