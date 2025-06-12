@@ -1,9 +1,6 @@
 @extends('layouts.app')
-
 @section('title', 'Trang Chủ Tech Shop')
-
 @section('content')
-    {{-- DÁN NỘI DUNG THẺ <main> TỪ FILE index.html CỦA BẠN VÀO ĐÂY --}}
     <main class="container mx-auto px-4 py-8">
         <!-- Banner quảng cáo -->
         <section class="mb-10">
@@ -97,16 +94,4 @@
             </div>
         </section>
     </main>
-    <!-- Banner quảng cáo -->
-    <section class="container mx-auto px-4 py-8 mb-10">
-        {{-- ... code banner ... --}}
-    </section>
-
-    <!-- Phần sản phẩm nổi bật -->
-    <section class="container mx-auto px-4 py-8">
-        <h2 class="text-3xl font-bold mb-6">Sản Phẩm Nổi Bật</h2>
-        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
-            {{-- Chúng ta sẽ đưa sản phẩm vào đây ở bước sau --}}
-        </div>
-    </section>
 @endsection

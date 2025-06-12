@@ -3,33 +3,63 @@
 @section('title', 'Quản lý Sản phẩm')
 
 @section('content')
-    <h1 class="text-2xl font-bold mb-4">Danh sách Sản phẩm</h1>
-    {{-- Thêm nút "Thêm mới" ở đây --}}
-    <div class="flex justify-end mb-4">
-        <a href="{{ route('admin.products.create') }}"
-            class="bg-black text-white font-bold py-2 px-4 rounded-lg hover:bg-gray-800">
-            Thêm Sản phẩm mới
-        </a>
+    <div class="page-header">
+        <h2 class="page-title">Quản lý Sản phẩm</h2>
+        <div class="page-actions">
+            <a href="{{ route('admin.products.create') }}" class="btn btn-primary">
+                <i class="fas fa-plus"></i>
+                Thêm Sản phẩm
+            </a>
+        </div>
     </div>
-    <table class="w-full bg-white rounded-lg shadow-md">
-        <thead>
-            <tr class="border-b">
-                <th class="p-3 text-left">Tên sản phẩm</th>
-                <th class="p-3 text-left">Giá</th>
-                <th class="p-3 text-left">Hành động</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach ($products as $product)
-                <tr class="border-b hover:bg-gray-50">
-                    <td class="p-3">{{ $product->name }}</td>
-                    <td class="p-3">{{ number_format($product->unit_price, 0, ',', '.') }}₫</td>
-                    <td class="p-3">
-                        {{-- Thêm nút Sửa/Xóa ở đây --}}
-                        <a href="#" class="text-blue-600 hover:underline">Sửa</a>
-                    </td>
+
+    @if (session('success'))
+        <div class="p-4 mb-4 text-sm text-green-700 bg-green-100 rounded-lg" role="alert">
+            {{ session('success') }}
+        </div>
+    @endif
+
+    <div class="content-card">
+        <table class="w-full text-left">
+            <thead>
+                <tr class="border-b">
+                    <th class="p-3">Ảnh</th>
+                    <th class="p-3">Tên sản phẩm</th>
+                    <th class="p-3">Giá</th>
+                    <th class="p-3">Số lượng</th>
+                    <th class="p-3">Hành động</th>
                 </tr>
-            @endforeach
-        </tbody>
-    </table>
+            </thead>
+            <tbody>
+                @forelse ($products as $product)
+                    <tr class="border-b hover:bg-gray-50">
+                        <td class="p-3"><img
+                                src="{{ $product->image ? Storage::url($product->image) : 'https://placehold.co/80x80' }}"
+                                alt="{{ $product->name }}" class="w-16 h-16 object-cover rounded"></td>
+                        <td class="p-3">{{ $product->name }}</td>
+                        <td class="p-3">{{ number_format($product->unit_price, 0, ',', '.') }}₫</td>
+                        <td class="p-3">{{ $product->stock_quantity }}</td>
+                        <td class="p-3">
+                            <a href="{{ route('admin.products.edit', $product->id) }}" class="action-btn" title="Sửa"><i
+                                    class="fas fa-edit"></i></a>
+                            <form action="{{ route('admin.products.destroy', $product->id) }}" method="POST"
+                                class="inline-block" onsubmit="return confirm('Bạn có chắc chắn muốn xóa?');">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="action-btn" title="Xóa"><i
+                                        class="fas fa-trash"></i></button>
+                            </form>
+                        </td>
+                    </tr>
+                @empty
+                    <tr>
+                        <td colspan="5" class="p-3 text-center">Không có sản phẩm nào.</td>
+                    </tr>
+                @endforelse
+            </tbody>
+        </table>
+        <div class="mt-4">
+            {{ $products->links() }}
+        </div>
+    </div>
 @endsection

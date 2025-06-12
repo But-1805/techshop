@@ -26,5 +26,6 @@ Route::middleware(['auth', 'admin'])->prefix('admin')->name('admin.')->group(fun
     // Route cho trang dashboard của admin
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 
-    // Chúng ta sẽ thêm các route quản lý sản phẩm, đơn hàng... vào đây sau
+    Route::resource('products', ProductController::class);
+
 });
