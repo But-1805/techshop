@@ -12,14 +12,16 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('products', function (Blueprint $table) {
-            $table->id();
+            $table->id(); // tự động tạo cột 'id' là BIGINT AUTO_INCREMENT PRIMARY KEY
             $table->string('name');
-            $table->foreignId('category_id')->constrained('categories'); // Khóa ngoại tới bảng categories
-            $table->foreignId('supplier_id')->constrained('suppliers'); // Khóa ngoại tới bảng suppliers
-            $table->decimal('unit_price', 10, 2);
+            $table->unsignedBigInteger('category_id');
+            $table->unsignedBigInteger('supplier_id');
+            $table->unsignedInteger('unit_price'); // chỉ là số, KHÔNG auto increment
             $table->integer('stock_quantity');
             $table->text('description')->nullable();
             $table->string('image')->nullable();
+            $table->foreign('category_id')->references('id')->on('categories');
+            $table->foreign('supplier_id')->references('id')->on('suppliers');
             $table->timestamps();
         });
     }

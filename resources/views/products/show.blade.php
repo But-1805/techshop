@@ -65,18 +65,20 @@
                             </div>
                         </div>
                     </div>
-
                     <!-- Nút mua hàng -->
-                    <div class="flex flex-col gap-3">
-                        <button
-                            class="w-full bg-black text-white font-bold py-4 rounded-lg hover:bg-gray-800 transition-colors">
-                            Thêm vào giỏ hàng
-                        </button>
-                        <button
-                            class="w-full bg-gray-200 text-black font-bold py-4 rounded-lg hover:bg-gray-300 transition-colors">
-                            Mua ngay
-                        </button>
-                    </div>
+                    <form action="{{ route('cart.add') }}" method="POST">
+                        @csrf
+                        <input type="hidden" name="product_id" value="{{ $product->id }}">
+
+                        {{-- (Tùy chọn) Thêm input cho số lượng nếu bạn muốn --}}
+                        {{-- <input type="number" name="quantity" value="1" min="1"> --}}
+
+                        <div class="flex flex-col gap-3 mt-6">
+                            <button type="submit"
+                                class="w-full bg-black text-white font-bold py-4 rounded-lg hover:bg-gray-800">Thêm vào giỏ
+                                hàng</button>
+                        </div>
+                    </form>
                 </div>
             </div>
 
