@@ -1,61 +1,57 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# 🛒 TECHSHOP - Website Bán Hàng Công Nghệ
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+> "Không chỉ là một cửa hàng trực tuyến – TechShop là trải nghiệm mua sắm số hóa, nơi công nghệ và sự tiện lợi giao thoa."
 
-## About Laravel
+## 🎯 Giới thiệu
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+**TechShop** là một nền tảng bán hàng công nghệ hiện đại được xây dựng bằng **Laravel** – framework mạnh mẽ của PHP. Dự án được phát triển như một phần của đồ án tốt nghiệp, với mục tiêu tạo ra một hệ thống bán hàng chuyên nghiệp, dễ sử dụng, bảo mật và có khả năng mở rộng.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## 🚀 Tính năng nổi bật
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+- 🔐 **Hệ thống xác thực người dùng**
+  - Đăng ký, đăng nhập, quên mật khẩu, đổi mật khẩu.
+  - Phân quyền người dùng (User & Admin).
 
-## Learning Laravel
+- 🛍️ **Quản lý sản phẩm**
+  - Danh mục sản phẩm: Điện thoại, laptop, phụ kiện.
+  - Thêm, sửa, xóa sản phẩm dành cho admin.
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+- 🛒 **Giỏ hàng và đặt hàng**
+  - Thêm sản phẩm vào giỏ hàng.
+  - Tính tổng tiền, thanh toán nhanh chóng.
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+- 📦 **Quản lý đơn hàng**
+  - Lịch sử mua hàng cho người dùng.
+  - Admin có thể theo dõi, xác nhận đơn hàng.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+- 📊 **Dashboard dành riêng cho Admin**
+  - Thống kê sản phẩm, người dùng, đơn hàng.
 
-## Laravel Sponsors
+- 🌙 **Chế độ Dark/Light Mode** *(sắp triển khai)*
+- 💬 **Live Chat hỗ trợ người dùng** *(dự kiến tích hợp)*
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+## 🛠️ Công nghệ sử dụng
 
-### Premium Partners
+| Thành phần | Công nghệ |
+|------------|-----------|
+| Backend    | Laravel 11.x |
+| Frontend   | Blade Template, HTML5, CSS3, Bootstrap |
+| Database   | MySQL (phpMyAdmin) |
+| Tool Dev   | Visual Studio Code, GitHub, XAMPP |
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+## 🧠 Triết lý phát triển
 
-## Contributing
+> Mỗi dòng code không chỉ để chạy – mà còn để truyền cảm hứng.  
+> Dự án này là bước đi đầu tiên trên con đường xây dựng những hệ thống thực sự hữu ích cho cộng đồng.
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+## 🧪 Hướng dẫn cài đặt (local)
 
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+```bash
+git clone https://github.com/But-1805/techshop.git
+cd techshop
+composer install
+cp .env.example .env
+php artisan key:generate
+# Setup DB và điền thông tin vào .env
+php artisan migrate --seed
+php artisan serve
